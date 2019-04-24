@@ -18,6 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import pdb
+
 import collections
 import operator
 import os
@@ -637,6 +639,8 @@ def decode_interactively(estimator, hparams, decode_hp, checkpoint_path=None):
     example = gen_fn()
     example = _interactive_input_tensor_to_features_dict(example, hparams)
     return example
+
+  pdb.set_trace()
 
   result_iter = estimator.predict(input_fn, checkpoint_path=checkpoint_path)
   for result in result_iter:
